@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities – Giacomo Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1 class="name">GIACOMO BALDAN</h1>
+
+    <nav class="categories">
+        <a href="index.html">All</a>
+        <a href="art.html">Art</a>
+        <a href="bw.html">B&W</a>
+        <a href="cities.html" class="active">Cities</a>
+        <a href="lights.html">Lights</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<main class="gallery">
+    <div class="gallery-item"><img src="images/cities/Berlin B&W.jpeg" alt="Berlin B&W"></div>
+    <div class="gallery-item"><img src="images/cities/Florence Dome.jpg" alt="Florence Dome"></div>
+    <div class="gallery-item"><img src="images/cities/Hawaii Maui Bus.jpg" alt="Hawaii Maui Bus"></div>
+    <div class="gallery-item"><img src="images/cities/London From Plane.jpeg" alt="London From Plane"></div>
+    <div class="gallery-item"><img src="images/cities/London Shard.jpeg" alt="London Shard"></div>
+    <div class="gallery-item"><img src="images/cities/London Sky Garden.jpeg" alt="London Sky Garden"></div>
+    <div class="gallery-item"><img src="images/cities/London St Paul.jpeg" alt="London St Paul"></div>
+    <div class="gallery-item"><img src="images/cities/New York Bricks.jpeg" alt="New York Bricks"></div>
+    <div class="gallery-item"><img src="images/cities/New York Buildings.jpeg" alt="New York Buildings"></div>
+    <div class="gallery-item"><img src="images/cities/New York Chrysler Building.jpeg" alt="New York Chrysler Building"></div>
+    <div class="gallery-item"><img src="images/cities/New York Empire State Building.jpeg" alt="New York Empire State Building"></div>
+    <div class="gallery-item"><img src="images/cities/New York Memorial.jpeg" alt="New York Memorial"></div>
+    <div class="gallery-item"><img src="images/cities/New York Mirrors.jpeg" alt="New York Mirrors"></div>
+    <div class="gallery-item"><img src="images/cities/New York The Edge.jpeg" alt="New York The Edge"></div>
+    <div class="gallery-item"><img src="images/cities/San Francisco Golden Gate Bridge 1.jpeg" alt="San Francisco Golden Gate Bridge 1"></div>
+    <div class="gallery-item"><img src="images/cities/San Francisco Golden Gate Bridge 2.jpeg" alt="San Francisco Golden Gate Bridge 2"></div>
+</main>
+
+<footer class="footer">
+    <nav class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+        <a href="index.html">Home</a>
+    </nav>
+</footer>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="">
+</div>
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.lightbox .close');
+
+document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+    });
+});
+
+// chiudi lightbox cliccando sulla X o fuori immagine
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+</script>
+
+</body>
+</html>
